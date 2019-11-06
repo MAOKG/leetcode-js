@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "main": "index.js",
     "repository": "git@personal:MAOKG/leetcode-js.git",
-    "author": "maosenchen6ix <mchen@solution-tek.com>",
+    "author": "maosen",
     "license": "MIT",
     "devDependencies": {
         "jest": "^24.9.0",
