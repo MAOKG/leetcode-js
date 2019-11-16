@@ -3,47 +3,72 @@
  * @return {number}
  */
 var maxPoints = function(points) {
-    const map = {}
-    for (let i = 0; i < points.length; i++) {
-        let p = points[i].toString()
-        if (map[p]) {
-            map[p]++
-        } else {
-            map[p] = 1
-        }
-    }
-    let uniquePoints = Object.keys(map)
-    if (uniquePoints.length <= 2) {
-        return points.length
-    }
     let max = 0
-    for (let i = 0; i < uniquePoints.length; i++) {
-        let a = uniquePoints[i].split(',').map(v => Number(v))
-        for (let j = i + 1; j < uniquePoints.length; j++) {
-            let b = uniquePoints[j].split(',').map(v => Number(v))
-            let count = 0
-            for (let k = 0; k < uniquePoints.length; k++) {
-                let c = uniquePoints[k].split(',').map(v => Number(v))
-                if (isSameLine(a, b, c)) {
-                    count += map[uniquePoints[k]]
+    for (let i = 0; i < points.length; i++) {
+        let samePointsCount = 0
+        let slopeMap = {}
+        let localMax = 0
+        for (let j = i; j < points.length; j++) {
+            if (
+                points[i][0] === points[j][0] &&
+                points[i][1] === points[j][1]
+            ) {
+                samePointsCount++
+            } else {
+                let slope = getSlope(points[i], points[j])
+                if (slopeMap[slope]) {
+                    slopeMap[slope]++
+                } else {
+                    slopeMap[slope] = 1
+                }
+                if (slopeMap[slope] > localMax) {
+                    localMax = slopeMap[slope]
                 }
             }
-            if (count > max) {
-                max = count
-            }
+        }
+        localMax += samePointsCount
+        if (localMax > max) {
+            max = localMax
         }
     }
     return max
 }
 
 /**
- * @param {number[]} a
- * @param {number[]} b
- * @param {number[]} b
- * @return {boolean}
+ * @param {number[]} p
+ * @param {number[]} q
+ * @return {string}
  */
-var isSameLine = function(a, b, c) {
-    return (b[1] - a[1]) * (c[0] - b[0]) === (c[1] - b[1]) * (b[0] - a[0])
+var getSlope = function(p, q) {
+    let dy = q[1] - p[1]
+    let dx = q[0] - p[0]
+    if (dy === 0) {
+        return '0/1'
+    }
+    if (dx === 0) {
+        return '1/0'
+    }
+    let isNegative = (dy > 0 && dx < 0) || (dy < 0 && dx > 0)
+    dy = Math.abs(dy)
+    dx = Math.abs(dx)
+    let gcd = getGCD(dx, dy)
+    dy = dy / gcd
+    dx = dx / gcd
+    return `${isNegative ? '-' : ''}${dy}/${dx}`
+}
+
+/**
+ * @param {number} a
+ * @param {number} b
+ * @return {number}
+ */
+var getGCD = function(a, b) {
+    if (a === 0) {
+        return b
+    }
+    return getGCD(b % a, a)
 }
 
 module.exports = maxPoints
+// runtime 95%
+// memory 100%

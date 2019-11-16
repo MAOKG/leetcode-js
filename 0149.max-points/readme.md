@@ -39,28 +39,48 @@ Explanation:
 
 ```
 MAX-POINTS(A)
-    map = new HashMap<point, count>
-    for i = 0:len(A)-1
-        map[A[i]]++
-    size(map) <= 2
-        return len(A)
     max = 0
-    arr = map.keys
-    for i = 0:len(arr)
-        for j = i+1:len(arr)
-            count = 0
-            for k = 0:len(arr)
-                if IS-SAME-LINE(A[i], A[j], A[k])
-                    count += map[A[k]]
-            if count > max
-                max = count
+    for i = 0:len(A)-1
+        samePointsCount = 0
+        slopeMap = new HashMap(slope, count)
+        localMax = 0
+        for j = i:len(A)-1
+            if A[i] = A[j]
+                samePointsCount++
+            else
+                slope = SLOPE(A[i], A[j])
+                slopeMap[slope]++
+                if slopeMap[slope] > localMax
+                    localMax = slopeMap[slope]
+        localMax += samPointsCount
+        if localMax > max
+            max = localMax
     return max
 END
 
 
-IS-SAME-LINE(A[i], A[j], A[k])
-    return (A[j].y-A[i].y)(A[k].x-A[i].x) = (A[k].y-A[i].y)(A[j].x-A[i].x)
+SLOPE(p, q)
+    dy = q.y-p.y
+    dx = q.x-p.x
+    if dy = 0
+        return 0/1
+    if dx = 0
+        return 1/0
+    isNegavtive = (dy > 0 && dx < 0) || (dy < 0 && dx > 0)
+    dy = abs(dy), dx=abs(dx)
+    gcd = FIND-GCD(dx, dy)
+    dy = dy/gcd
+    dx = dx/gcd
+        return dy/dx (with negative sign if it is negative)
+END
+
+FIND-GCD(a, b)
+    if a = 0
+        return b
+    return FIND-GCD(b%a, a)
 END
 ```
 
-(j.y-i.y)/(j.x-i.x) = (k.y-i.y)/(k.x-i.x)
+## Reference
+
+[Euclidean algorithm to find greatest common divisor of two integers](https://www.geeksforgeeks.org/c-program-find-gcd-hcf-two-numbers/)
