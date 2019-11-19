@@ -22,7 +22,7 @@ REVERSE-BETWEEM(head, m, n)
     prev = null
     while i < m
         prev = curr
-        curr = head.next
+        curr = curr.next
         i++
     before = prev
     tail = curr
