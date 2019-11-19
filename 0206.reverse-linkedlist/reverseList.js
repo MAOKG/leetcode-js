@@ -21,5 +21,6 @@ var reverseList = function(head) {
     return prev
 }
 
+module.exports = reverseList
 // runtime 15%
 // memory 74%
