@@ -1,6 +1,4 @@
 const ListNode = require('../utils/ListNode')
-const arrayToLinkedList = require('../utils/arrayToLinkedList')
-const linkedListToArray = require('../utils/linkedListToArray')
 
 /**
  * Definition for singly-linked list.
