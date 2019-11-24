@@ -10,7 +10,7 @@ test('test case 1', () => {
     expect(linkedListToArray(result)).toEqual([2, 1, 4, 3, 5])
 })
 
-test('test case 1', () => {
+test('test case 2', () => {
     var l = arrayToLinkedList([1, 2, 3, 4, 5])
     var k = 3
     var result = reverseKGroup(l, k)
