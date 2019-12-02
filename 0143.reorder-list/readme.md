@@ -36,7 +36,7 @@ REORDER-LIST(head)
     rightHead = mid.next
     mid.next = null
     rightHead = REVERSE(rightHead)
-    return MERGE(head, rightHead)
+    MERGE(head, rightHead)
 END
 
 REVERSE(head)
@@ -53,7 +53,6 @@ END
 MERGE(head1, head2)
     curr1 = head1
     curr2 = head2
-
     while curr2
         next = curr1.next
         curr1.next = curr2
