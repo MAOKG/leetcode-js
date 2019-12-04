@@ -54,7 +54,7 @@ EVAL-RPN(tokens)
         else
             a = nums.pop()
             b = nums.pop()
-            val = a tokens[i] b
+            val = b tokens[i] a
             nums.push(val)
     return nums.pop()
 END
