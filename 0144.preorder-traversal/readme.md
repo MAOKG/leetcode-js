@@ -50,6 +50,8 @@ Recursive solution is trivial, could you do it iteratively?
 
 ## Pseudocode
 
+Recursive solution
+
 ```
 PREORDER(node, arr)
   if node.val
@@ -64,6 +66,26 @@ PREORDER-TRAVERSAL(root)
   arr = new Array()
   if root
     PREORDER(root, arr)
+  return arr
+END
+```
+
+Iterative solution
+
+```
+PREORDER-TRAVERSAL(root)
+  arr = new Array()
+  stack = new Stack()
+  if !root
+    return arr
+  stack.push(root)
+  while !stack.isEmpty()
+    curr = stack.pop()
+    arr.push(curr.val)
+    if curr.right
+      stack.push(curr.right)
+    if curr.left
+      stack.push(curr.left)
   return arr
 END
 ```
