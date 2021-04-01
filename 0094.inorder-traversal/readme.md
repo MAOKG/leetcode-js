@@ -1,6 +1,6 @@
-[144. Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)
+[94. Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
 
-Given the root of a binary tree, return the preorder traversal of its nodes' values.
+Given the root of a binary tree, return the inorder traversal of its nodes' values.
 
 ## Examples
 
@@ -8,7 +8,7 @@ Example 1:
 
 ```
 Input: root = [1,null,2,3]
-Output: [1,2,3]
+Output: [1,3,2]
 ```
 
 Example 2:
@@ -29,7 +29,7 @@ Example 4:
 
 ```
 Input: root = [1,2]
-Output: [1,2]
+Output: [2,1]
 ```
 
 Example 5:
@@ -53,19 +53,19 @@ Recursive solution is trivial, could you do it iteratively?
 Recursive solution
 
 ```
-PREORDER(node, arr)
+INORDER(node, arr)
+  if node.left
+    INORDER(node.left, arr)
   if node.val
     arr.push(node.val)
-  if node.left
-    PREORDER(node.left, arr)
   if node.right
-    PREORDER(node.right, arr)
+    INORDER(node.right, arr)
 END
 
-PREORDER-TRAVERSAL(root)
+INORDER-TRAVERSAL(root)
   arr = new Array()
   if root
-    PREORDER(root, arr)
+    INORDER(root, arr)
   return arr
 END
 ```
@@ -73,19 +73,24 @@ END
 Iterative solution
 
 ```
-PREORDER-TRAVERSAL(root)
+INORDER-TRAVERSAL(root)
   arr = new Array()
   stack = new Stack()
   if !root
     return arr
-  stack.push(root)
+  stack.push(Command("visit", root))
   while !stack.isEmpty()
     curr = stack.pop()
-    arr.push(curr.val)
-    if curr.right
-      stack.push(curr.right)
-    if curr.left
-      stack.push(curr.left)
+    if curr.s is "push"
+      arr.push(curr.root.val)
+    else
+      if curr.node.right
+        stack.push(Command("visit", curr.node.right))
+      stack.push(Command("push", curr.node))
+      if curr.node.left
+        stack.push(Command("visit", curr.node.left))
   return arr
 END
+
+Command(string s,TreeNode node)
 ```
