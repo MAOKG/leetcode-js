@@ -41,32 +41,35 @@ Explanation: The endWord "cog" is not in wordList, therefore there is no valid t
 ```
 WORD-LADDER(beginWord, endWord, wordList)
   if wordList.contain(endWord)
+    if beginword.length is 1
+      return 2
+    dictPatternWords = new HashMap<string, array>
+    dictWordPatterns = new HashMap<string, array>
+    for word in wordList plus beginWord
+      dictWordPatterns[word] = []
+      for i in 0:len(word)-1
+        patten = word replace index i to *
+        dictWordPatterns[word].push(pattern)
+        if dictPatternWords[pattern]
+          dictPatternWords[pattern].push(word)
+        else
+          dictPatternWords[pattern] = [word]
     visited = hashMap<word, bool>()
     queue = new Queue<WordWithLevel>()
     queue.enqueue(new WordWithLevel(beginWord, 1))
     visited[beginWord] = true
     while queue is not empty
       curr = queue.dequeue()
-      for word in wordList
-        if !visited[word] && IS-CONNECTED(curr.word, word)
-          if word is endWord
+      patterns = dictWordPatterns[curr.word]
+      for pattern in patterns
+        neighbours = dictPatternWords[pattern]
+        for neighbour in neighbours
+          if neighbour is endWord
             return curr.level + 1
-          queue.enqueue(new WordWithLevel(word, curr.level+1))
-          visited[word] = true
+          if !visited[neighbour]
+            queue.enqueue(new WordWithLevel(neighbour, curr.level+1))
+            visited[neighbour] = true
   return 0
-END
-
-IS-CONNECTED(word1, word2)
-  if word1.length = word2.length
-    diffCount = 0
-    for i in 0:word1.length-1
-      if word1[i] != word2[i]
-        diffCount++
-        if diffCount > 1
-          return false
-    if diffCount = 1
-      return true
-  return false
 END
 
 WordWithLevel(word String, level Int)
