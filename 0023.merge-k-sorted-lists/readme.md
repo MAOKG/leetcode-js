@@ -75,10 +75,10 @@ MERGE-2-LISTS(head1, head2)
       curr.next = curr2
       curr2 = curr2.next
     curr = curr.next
-    if !curr1
-      curr.next = curr2
-    if !curr2
-      curr.next = curr1
+  if !curr1 && curr2
+    curr.next = curr2
+  if !curr2 && curr1
+    curr.next = curr1
   return dummyHead.next
 END
 ```
