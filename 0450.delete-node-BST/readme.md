@@ -44,6 +44,8 @@ Output: []
 
 ## Pseudocode
 
+Iterative
+
 ```
 DELETE-NODE(root, key)
   if !root
@@ -89,5 +91,31 @@ DELETE-NODE(root, key)
       sParent.right = s.right
   return root
 END
+```
 
+Recursive
+
+```
+DELETE-NODE(root, key)
+  if !root
+    return null
+  if root.val is key
+    if root has no children
+      return null
+    else if root has one child
+      child = root.left || root.right
+      return child
+    else
+      s = root.right
+      while s.left
+        s = s.left
+      root.val = s.val
+      root.right = DELETE-NODE(root.right, s.val)
+  else if root.val > key
+    root.left = DELETE-NODE(root.left, key)
+  else
+    root.right = DELTE-NODE(root.right, key)
+
+  return root
+END
 ```
