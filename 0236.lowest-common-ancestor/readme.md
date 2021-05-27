@@ -37,6 +37,8 @@ Output: 1
 
 ## Pseudocode
 
+Solution 1
+
 ```
 LCA(root, p, q)
   pMap = new Map<num, bool>()
@@ -70,8 +72,30 @@ MAP(node, target, map)
 
     map[node.val] = isContain
 END
+```
 
+Solution 2
 
-left contains p
-right contains q
+```
+LCA(root, p, q)
+  ancestor = FIND-ANCESTOR(root, q, q)
+  return ancestor
+END
+
+FIND-ANCESTOR(node, p, q)
+  if !node
+    return null
+  if node is p or q
+    return node
+  leftAncestor = FIND-ANCESTOR(node.left, p, q)
+  rightAncestor = FIND-ANCESTOR(node.right, p, q)
+
+  if leftAncestor && rightAncestor
+    return node
+  if leftAncestor
+    return leftAncestor
+  if rightAncestor
+    return rightAncestor
+  return null
+END
 ```

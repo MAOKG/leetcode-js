@@ -1,5 +1,6 @@
 const TreeNode = require('../utils/TreeNode')
 const LCA = require('./lowestCommonAncestor')
+const LCA2 = require('./lowestCommonAncestor2')
 
 test('test case 1', () => {
     const n9 = new TreeNode(4)
@@ -13,8 +14,10 @@ test('test case 1', () => {
     const n1 = new TreeNode(3, n2, n3)
 
     const result = LCA(n1, n2, n3)
+    const result2 = LCA2(n1, n2, n3)
 
     expect(result).toEqual(n1)
+    expect(result2).toEqual(n1)
 })
 
 test('test case 2', () => {
@@ -29,8 +32,10 @@ test('test case 2', () => {
     const n1 = new TreeNode(3, n2, n3)
 
     const result = LCA(n1, n2, n9)
+    const result2 = LCA2(n1, n2, n9)
 
     expect(result).toEqual(n2)
+    expect(result2).toEqual(n2)
 })
 
 test('test case 3', () => {
@@ -38,6 +43,8 @@ test('test case 3', () => {
     const n1 = new TreeNode(1, n2)
 
     const result = LCA(n1, n1, n2)
+    const result2 = LCA2(n1, n1, n2)
 
     expect(result).toEqual(n1)
+    expect(result2).toEqual(n1)
 })
