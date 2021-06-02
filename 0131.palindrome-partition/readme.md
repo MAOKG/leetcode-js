@@ -25,6 +25,8 @@ Output: [["a"]]
 
 ## Pseudocode
 
+Solution 1
+
 ```
 PARTITION(s)
   results = []
@@ -43,6 +45,47 @@ GET-PARTITIONS(s, prev, results)
 END
 
 IS-PALINDROME(s)
+  if s is empty
+    return false
+  if s.length is 1
+    return true
+  for i = 0, j = s.length-1; i < j; i++, j--
+    if s[i] != s[j]
+      return false
+  return true
+END
+```
+
+Solution 2
+
+```
+PARTITION(s)
+  results = []
+  map = new HashMap<string, bool>()
+  GET-PARTITIONs(s, [], results)
+  return results
+END
+
+
+GET-PARTITIONS(s, prev, results, map)
+  if s is empty
+    results.push(prev)
+    return
+  for i = 0:s.length-1
+    sub = s[0:i]
+    isPalin = false
+    if map has key sub
+      isPalin = map[sub]
+    else
+      isPalin = IS-PALINDROME(sub)
+      map[sub] = isPalin
+    if isPalin
+      GET-PARTITION(s[i+1:], [...prev, sub], results, map)
+END
+
+IS-PALINDROME(s)
+  if s is empty
+    return false
   if s.length is 1
     return true
   for i = 0, j = s.length-1; i < j; i++, j--

@@ -4,19 +4,28 @@
  */
 var partition = function(s) {
     const results = []
-    getPartitions(s, [], results)
+    const map = {}
+    getPartitions(s, [], results, map)
     return results
 }
 
-var getPartitions = function(s, prev, results) {
+var getPartitions = function(s, prev, results, map) {
     if (!s) {
         results.push(prev)
         return
     }
     for (let i = 0; i < s.length; i++) {
         let sub = s.substring(0, i + 1)
-        if (isPalindrome(sub)) {
-            getPartitions(s.substring(i + 1), [...prev, sub], results)
+        let isPalin = false
+        if (map.hasOwnProperty(sub)) {
+            isPalin = map[sub]
+        } else {
+            isPalin = isPalindrome(sub)
+            map[sub] = isPalin
+        }
+
+        if (isPalin) {
+            getPartitions(s.substring(i + 1), [...prev, sub], results, map)
         }
     }
 }
@@ -42,5 +51,5 @@ var isPalindrome = function(s) {
 }
 
 module.exports = partition
-// runtime 7.5%
-// memory 5%
+// runtime 26%
+// memory 32%
