@@ -37,12 +37,14 @@ PACIFIC-ATLANTIC(heights)
   atlanticMap = new Array<Array>()
   m = heights.length
   n = heights[0].length
+
   for x in 0:m-1
-    for y in 0:n-1
-      if x is 0 or y is 0
-        DFS(heights, pacificMap, x, y)
-      if x is m-1 or y is n-1
-        DFS(heights, atlanticMap, x, y)
+    DFS(heights, pacificMap, x, 0)
+    DFS(heights, atlanticMap, x, n-1)
+  for y in 0:n-1
+    DFS(heights, pacificMap, 0, y)
+    DFS(heights, atlanticMap, m-1, y)
+
   results = new Array()
   for x in 0:m-1
     for y in 0:n-1

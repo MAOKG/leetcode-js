@@ -9,15 +9,14 @@ var pacificAtlantic = function(heights) {
     const atlanticMap = new Array(m)
         .fill(0)
         .map(ele => new Array(n).fill(false))
+
     for (let x = 0; x < m; x++) {
-        for (let y = 0; y < n; y++) {
-            if (x === 0 || y === 0) {
-                dfs(heights, pacificMap, x, y)
-            }
-            if (x === m - 1 || y === n - 1) {
-                dfs(heights, atlanticMap, x, y)
-            }
-        }
+        dfs(heights, pacificMap, x, 0)
+        dfs(heights, atlanticMap, x, n - 1)
+    }
+    for (let y = 0; y < n; y++) {
+        dfs(heights, pacificMap, 0, y)
+        dfs(heights, atlanticMap, m - 1, y)
     }
     const results = []
     for (let x = 0; x < m; x++) {
@@ -67,5 +66,5 @@ var onBoard = function(heights, x, y) {
 }
 
 module.exports = pacificAtlantic
-// runtime 49%
-// memory 63%
+// runtime 54%
+// memory 53%
