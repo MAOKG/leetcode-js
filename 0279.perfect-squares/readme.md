@@ -53,3 +53,17 @@ END
 
 NodeWithLevel(val Int, level Int)
 ```
+
+Dynamic programming
+
+```
+PERFECT-SQUARES(n)
+  memo = new Array<Int>(n+1, INFINITY)
+  memo[0] = 0
+  memo[1] = 1
+  for i from 1:n
+    for j =1, j*j <=i, j++
+      memo[i] = MIN(memo[i], 1+memo[i-j*j])
+  return memo[n]
+END
+```
