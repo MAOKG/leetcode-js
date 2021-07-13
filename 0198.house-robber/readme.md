@@ -56,12 +56,11 @@ ROB(nums)
   memo = new Array<Int>(n, -1)
   memo[n-1] = nums[n-1]
   for i from n-2 to 0
-    if memo[i] is -1
-      val1 = memo[i+1]
-      val2 = nums[i]
-      if i+2 < n
-        val2 += memo[i+2]
-      memo[i] = MAX(val1, val2)
+    val1 = memo[i+1]
+    val2 = nums[i]
+    if i+2 < n
+      val2 += memo[i+2]
+    memo[i] = MAX(val1, val2)
   return memo[0]
 END
 ```
