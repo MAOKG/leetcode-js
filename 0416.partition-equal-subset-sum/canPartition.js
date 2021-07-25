@@ -12,12 +12,9 @@ var canPartition = function(nums) {
     }
     const s = sum / 2
     const memo = new Array(s + 1).fill(false)
+    memo[0] = true
 
-    for (let i = 0; i <= s; i++) {
-        memo[i] = nums[0] === i
-    }
-
-    for (let i = 1; i < nums.length; i++) {
+    for (let i = 0; i < nums.length; i++) {
         for (let j = s; j >= nums[i]; j--) {
             memo[j] = memo[j] || memo[j - nums[i]]
         }
@@ -27,5 +24,5 @@ var canPartition = function(nums) {
 }
 
 module.exports = canPartition
-// runtime 80%
-// memory 88%
+// runtime 72%
+// memory 95%

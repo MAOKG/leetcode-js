@@ -82,10 +82,9 @@ CAN-PARTITION(nums)
     return false
   s = sum/2
   memo = new Array(s+1, false)
-  for i from 0:s
-    memo[i] = ( nums[0] == i )
+  memo[0] = true
 
-  for i from 1:n-1
+  for i from 0:n-1
     for j from s:nums[i]
       memo[j] = memo[j] || memo[j - nums[i]]
 
