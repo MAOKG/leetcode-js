@@ -4,16 +4,19 @@
  * @return {number}
  */
 var combinationSum4 = function(nums, target) {
-    let count = 0
-    if (target === 0) {
-        return 1
-    }
-    for (let num of nums) {
-        if (target >= num) {
-            count += combinationSum4(nums, target - num)
+    const memo = new Array(target + 1).fill(0)
+    memo[0] = 1
+    for (let sum = 1; sum <= target; sum++) {
+        for (let num of nums) {
+            if (sum >= num) {
+                memo[sum] += memo[sum - num]
+            }
         }
     }
-    return count
+
+    return memo[target]
 }
 
 module.exports = combinationSum4
+// runtime 60%
+// memory 33%

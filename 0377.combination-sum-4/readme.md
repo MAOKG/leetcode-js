@@ -40,18 +40,6 @@ Follow up: What if negative numbers are allowed in the given array? How does it 
 ## Pseudocode
 
 ```
-COMB-SUM(nums, target)
-  count = 0
-  if target is 0
-    return 1
-  for num in nums
-    if target >= num
-      count += GET-COUNT(nums, target-num)
-  return count
-END
-```
-
-```
 COMB(nums, target)
   memo = new Array<Int>(target+1, 0)
   memo[0] = 1
