@@ -101,11 +101,11 @@ COIN-CHANGE(coins, amount)
           val1 += 1
         val2 = memo[a]
         if val1 > -1 && val2 > -1
-          memo[i] = MIN(val1, val2)
+          memo[a] = MIN(val1, val2)
         else if val1 > -1
-          memo[i] = val1
+          memo[a] = val1
         else
-          memo[i] = val2
+          memo[a] = val2
   return memo[amount]
 END
 ```

@@ -4,41 +4,35 @@
  * @return {number}
  */
 var coinChange = function(coins, amount) {
-    coins.sort((a, b) => b - a)
-    const memo = new Array(coins.length)
-        .fill(0)
-        .map(ele => new Array(amount + 1).fill(null))
-    return getNum(coins, amount, 0, memo)
-}
-
-var getNum = function(coins, amount, index, memo) {
-    if (amount === 0) {
-        return 0
-    }
-    if (index >= coins.length || amount < 0) {
-        return -1
-    }
-    if (memo[index][amount] !== null) {
-        return memo[index][amount]
-    }
-    let res = -1
-    let res1 = getNum(coins, amount, index + 1, memo)
-    let res2 = getNum(coins, amount - coins[index], index, memo)
-    if (res2 > -1) {
-        res2++
-    }
-    if (res1 > -1 && res2 > -1) {
-        res = Math.min(res1, res2)
-    } else if (res1 < 0) {
-        res = res2
-    } else {
-        res = res1
+    coins.sort((a, b) => a - b)
+    const memo = new Array(amount + 1).fill(-1)
+    memo[0] = 0
+    for (let a = 1; a <= amount; a++) {
+        if (a >= coins[0] && memo[a - coins[0]] > -1) {
+            memo[a] = 1 + memo[a - coins[0]]
+        }
     }
 
-    memo[index][amount] = res
-    return res
+    for (let i = 1; i < coins.length; i++) {
+        for (let a = 1; a <= amount; a++) {
+            if (a >= coins[i]) {
+                let val1 = memo[a - coins[i]]
+                if (val1 > -1) {
+                    val1++
+                }
+                let val2 = memo[a]
+                if (val1 > -1 && val2 > -1) {
+                    memo[a] = Math.min(val1, val2)
+                } else if (val1 > -1) {
+                    memo[a] = val1
+                }
+            }
+        }
+    }
+
+    return memo[amount]
 }
 
 module.exports = coinChange
-// runtime 35%
-// memory 41%
+// runtime 91%
+// memory 75%
