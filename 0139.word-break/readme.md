@@ -54,7 +54,7 @@ CHECK-WORD(s, index, wordDict, memo)
 
   for word in wordDict
     n = word.length
-    if s.length-1-index >= n && s[index:index+n] is word && CHECK-WORD(s, index+n+1, wordDict, memo)
+    if s.length-1-index >= n && s[index:index+n-1] is word && CHECK-WORD(s, index+n, wordDict, memo)
       memo[index] = true
       return true
   memo[index] = false
@@ -66,7 +66,16 @@ Dynamic programming
 
 ```
 WORD-BREAK(s, wordDict)
-  memo = new Array<bool>(s.length, null)
+  memo = new Array<bool>(s.length+1, false)
+  memo[s.length] = true
 
+  for i from s.length-1:0
+    for word in wordDict
+      n = word.length
+      if i+n <= s.length && s[i:i+n-1] is word && memo[i+n]
+        memo[i] = true
+        break
+
+  return memo[0]
 END
 ```

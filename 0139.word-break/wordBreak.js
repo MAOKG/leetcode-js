@@ -4,30 +4,24 @@
  * @return {boolean}
  */
 var wordBreak = function(s, wordDict) {
-    const memo = new Array(s.length).fill(null)
-    return checkWord(s, 0, wordDict, memo)
-}
-
-var checkWord = function(s, index, wordDict, memo) {
-    if (index >= s.length) {
-        return true
-    }
-    if (memo[index] !== null) {
-        return memo[index]
-    }
-    for (let word of wordDict) {
-        let n = word.length
-        if (
-            s.length - 1 - index >= n &&
-            s.substring(index, index + n + 1) === word &&
-            checkWord(s, index + n + 1, wordDict, memo)
-        ) {
-            memo[index] = true
-            return true
+    const memo = new Array(s.length + 1).fill(false)
+    memo[s.length] = true
+    for (let i = s.length - 1; i >= 0; i--) {
+        for (let word of wordDict) {
+            let n = word.length
+            if (
+                i + n <= s.length &&
+                s.substring(i, i + n) == word &&
+                memo[i + n]
+            ) {
+                memo[i] = true
+                break
+            }
         }
     }
-    memo[index] = false
-    return false
+    return memo[0]
 }
 
 module.exports = wordBreak
+// runtime 58%
+// memory 27%
