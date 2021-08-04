@@ -16,34 +16,29 @@ var findMaxForm = function(strs, m, n) {
             }
         }
     }
-    const memo = new Array(strs.length)
+    const memo = Array(m + 1)
         .fill(0)
-        .map(ele =>
-            new Array(m + 1).fill(0).map(ele => new Array(n + 1).fill(-1))
-        )
+        .map(ele => new Array(n + 1).fill(0))
 
-    return getMax(m, n, 0, zeros, ones, memo)
-}
+    for (let i = 0; i < strs.length; i++) {
+        let oneCount = ones[i]
+        let zeroCount = zeros[i]
+        if (oneCount > n || zeroCount > m) {
+            continue
+        }
+        for (let x = m; x >= zeroCount; x--) {
+            for (let y = n; y >= oneCount; y--) {
+                let curr = 1 + memo[x - zeroCount][y - oneCount]
+                if (curr > memo[x][y]) {
+                    memo[x][y] = curr
+                }
+            }
+        }
+    }
 
-var getMax = function(m, n, index, zeros, ones, memo) {
-    if (index >= zeros.length) {
-        return 0
-    }
-    if (memo[index][m][n] > -1) {
-        return memo[index][m][n]
-    }
-    if (zeros[index] > m || ones[index] > n) {
-        return getMax(m, n, index + 1, zeros, ones, memo)
-    }
-    let val1 = getMax(m, n, index + 1, zeros, ones, memo)
-    let val2 =
-        1 +
-        getMax(m - zeros[index], n - ones[index], index + 1, zeros, ones, memo)
-    memo[index][m][n] = Math.max(val1, val2)
-
-    return memo[index][m][n]
+    return memo[m][n]
 }
 
 module.exports = findMaxForm
-// runtime 38%
-// memory 32%
+// runtime 96%
+// memory 92%

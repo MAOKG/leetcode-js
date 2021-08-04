@@ -62,3 +62,31 @@ GET-MAX(m, n, index, zeros, ones, memo)
   return memo[index][m][n]
 END
 ```
+
+Dynamic programming
+
+```
+FIND-MAX(strs, m, n)
+  zeros = new Array<Int>(strs.length, 0)
+  ones = new Array<Int>(strs.length, 0)
+  for i from 0:strs.length-1
+    for j from 0:strs[i].length
+      if strs[i][j] is '0'
+        zeros[i]++
+      else
+        ones[i]++
+  memo = new Array<Array>(m+1, new Array<Int>(n, 0))
+  for i from 0:str.length-1
+    oneCount = ones[i]
+    zeroCount = zeros[i]
+    if oneCount > n or zeroCount > m
+      continue
+    for x from m:zeroCount
+      for y from n:oneCount
+        curr = 1 + memo[x-zeroCount][y-onesCount]
+        if curr > memo[x][y]
+          memo[x][y] = curr
+
+  return memo[m][n]
+END
+```
