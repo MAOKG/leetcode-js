@@ -4,23 +4,25 @@
  * @return {number}
  */
 var findTargetSumWays = function(nums, target) {
-    const memo = new Array(nums.length).fill(0).map(ele => new Map())
-    return getCount(nums, target, 0, memo)
-}
+    let memo = new Array(2001).fill(0)
+    memo[1000 + nums[0]] += 1
+    memo[1000 - nums[0]] += 1
 
-var getCount = function(nums, target, index, memo) {
-    if (index >= nums.length) {
-        return target === 0 ? 1 : 0
+    for (let i = 1; i < nums.length; i++) {
+        let curr = nums[i]
+        let temp = new Array(2001).fill(0)
+        for (let j = 0; j < 2001; j++) {
+            if (j - curr >= 0) {
+                temp[j] += memo[j - curr]
+            }
+            if (j + curr <= 2000) {
+                temp[j] += memo[j + curr]
+            }
+        }
+        memo = temp
     }
-    if (memo[index].has(target)) {
-        return memo[index].get(target)
-    }
-    const count =
-        getCount(nums, target - nums[index], index + 1, memo) +
-        getCount(nums, target + nums[index], index + 1, memo)
-    memo[index].set(target, count)
 
-    return count
+    return memo[target + 1000]
 }
 
 module.exports = findTargetSumWays

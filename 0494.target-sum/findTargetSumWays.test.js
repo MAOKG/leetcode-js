@@ -13,3 +13,10 @@ test('test case 2', () => {
     const output = 1
     expect(findTargetSumWays(nums, target)).toBe(output)
 })
+
+test('test case 3', () => {
+    const nums = [0, 0, 0, 0, 0, 0, 0, 0, 1]
+    const target = 1
+    const output = 256
+    expect(findTargetSumWays(nums, target)).toBe(output)
+})

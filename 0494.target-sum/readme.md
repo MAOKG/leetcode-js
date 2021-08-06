@@ -59,3 +59,25 @@ GET-COUNT(nums, target, index, memo)
   return count
 END
 ```
+
+Dynamic programming
+
+```
+TARGET-SUM(nums, target)
+  memo = new Array<Int>(2001, 0)
+  memo[1000+nums[0]] += 1
+  memo[1000-nums[0]] += 1
+
+  for i from 1:nums.length-1
+    curr = nums[i]
+    temp = new Array<Int>(2001, 0)
+    for j from 0:2000
+      if j-curr >=0
+        temp[j] += memo[j-curr]
+      if j+curr <= 2000
+        temp[j] += memo[j+curr]
+    memo = temp
+
+  return memo[1000+target]
+END
+```
