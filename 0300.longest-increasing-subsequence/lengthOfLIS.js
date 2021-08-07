@@ -8,15 +8,13 @@ var lengthOfLIS = function(nums) {
         return 0
     }
     const memo = new Array(n).fill(1)
+    let res = 1
     for (let i = 1; i < n; i++) {
         for (let j = 0; j < i; j++) {
             if (nums[i] > nums[j] && memo[i] < 1 + memo[j]) {
                 memo[i] = 1 + memo[j]
             }
         }
-    }
-    let res = 1
-    for (let i = 0; i < n; i++) {
         if (memo[i] > res) {
             res = memo[i]
         }

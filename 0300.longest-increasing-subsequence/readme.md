@@ -42,13 +42,11 @@ LENGTH-LIS(nums)
   if nums.length is 0
     return 0
   memo = new Array(nums.length, 1)
+  res = 1
   for i from 1:nums.length-1
     for j from 0:i-1
       if nums[j] < nums[i]
         memo[i] = MAX(memo[i], memo[j]+1)
-
-  res = 1
-  for i from 0:nums.length-1
     res = Max(res, memo[i])
   return res
 END
