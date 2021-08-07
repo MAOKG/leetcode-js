@@ -58,11 +58,15 @@ WIGGLE(nums)
   memoNeg = new Array(n, 1)
   res = 1
   for i from 1:n-1
-    for j from 0:i-1
-      if nums[i] > nums[j]
-        memoPos[i] = Max(memoPos[i], 1 + memoNeg[j])
-      if nums[i] < nums[j]
-        memoNeg[i] = Max(memoNeg[i], 1 + memoPos[j])
+    if nums[i] > nums[i-1]
+      memoPos[i] = Max(memoPos[i], 1 + memoNeg[i-1])
+      memoNeg[i] = memoNeg[i-1]
+    if nums[i] < nums[i-1]
+      memoNeg[i] = Max(memoNeg[i], 1 + memoPos[i-1])
+      memoPos[i] = memoPos[i-1]
+    else
+      memoNeg[i] = memoNeg[i-1]
+      memoPos[i] = memoPos[i-1]
     res = Max(res, memoPos[i], memoNeg[i])
 
   return res

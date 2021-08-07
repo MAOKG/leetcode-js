@@ -20,14 +20,17 @@ var wiggleMaxLength = function(nums) {
     const memoNeg = new Array(n).fill(1)
     let res = 1
     for (let i = 1; i < n; i++) {
-        for (let j = 0; j < i; j++) {
-            if (nums[i] > nums[j]) {
-                memoPos[i] = Math.max(memoPos[i], 1 + memoNeg[j])
-            }
-            if (nums[i] < nums[j]) {
-                memoNeg[i] = Math.max(memoNeg[i], 1 + memoPos[j])
-            }
+        if (nums[i] > nums[i - 1]) {
+            memoPos[i] = 1 + memoNeg[i - 1]
+            memoNeg[i] = memoNeg[i - 1]
+        } else if (nums[i] < nums[i - 1]) {
+            memoNeg[i] = 1 + memoPos[i - 1]
+            memoPos[i] = memoPos[i - 1]
+        } else {
+            memoPos[i] = memoPos[i - 1]
+            memoNeg[i] = memoNeg[i - 1]
         }
+
         res = Math.max(res, memoPos[i], memoNeg[i])
     }
 
@@ -35,5 +38,5 @@ var wiggleMaxLength = function(nums) {
 }
 
 module.exports = wiggleMaxLength
-// runtime 23%
-// memory 10%
+// runtime 63%
+// memory 78%
