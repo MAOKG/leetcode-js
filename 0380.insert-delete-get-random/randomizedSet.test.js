@@ -10,3 +10,13 @@ test('test case 1', () => {
     expect(randomizedSet.insert(2)).toBe(false)
     expect(randomizedSet.getRandom()).toBe(2)
 })
+
+test('test case 2', () => {
+    const randomizedSet = new RandomizedSet()
+    expect(randomizedSet.insert(0)).toBe(true)
+    expect(randomizedSet.insert(1)).toBe(true)
+    expect(randomizedSet.remove(0)).toBe(true)
+    expect(randomizedSet.insert(2)).toBe(true)
+    expect(randomizedSet.remove(1)).toBe(true)
+    expect(randomizedSet.getRandom()).toBe(2)
+})
