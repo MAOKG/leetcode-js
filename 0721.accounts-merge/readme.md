@@ -70,3 +70,46 @@ DFS(email, graph, visited, emails)
       DFS(neighbour, graph, visited, emails)
 END
 ```
+
+Union Find
+
+```
+ACCOUNTS-MERGE(accounts)
+  parent = new HashMap<String, String>()
+  emailNameMap = new HashMap<String, String>()
+
+  for account in accounts
+    name = account[0]
+    for i from 1:account.length-1
+      email = account[i]
+      emailNameMap[email] = name
+      if i < account.length-1
+        UNION(parent, email, account[i+1])
+
+  emailSets = new HashMap<String, Array>()
+  for email in emailNameMap.keys()
+    root = FIND(parent, email)
+    emailSets[root].push(email)
+
+  res = new Array()
+  for email in emailSets.keys()
+    name = emailNameMap[email]
+    emails = emailSets[email]
+    emails.sort()
+    res.push([name, ...emails])
+  return res
+END
+
+FIND(parent, x)
+  if !parent[x]
+    return x
+  return FIND(parent, parent[x])
+END
+
+UNION(parent, x, y)
+  p1 = find(parent, x)
+  p2 = parent(parent, y)
+  if p1 != p2
+    parent[p2] = p1
+END
+```
