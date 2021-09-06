@@ -24,52 +24,60 @@
  *     };
  * };
  */
-/**
- * @constructor
- * @param {NestedInteger[]} nestedList
- */
-var NestedIterator = function(nestedList) {
-    this.stack = []
-    flatten(nestedList, this.stack)
-}
 
-/**
- * @this NestedIterator
- * @returns {boolean}
- */
-NestedIterator.prototype.hasNext = function() {
-    return this.stack.length > 0
-}
+class NestedIterator {
+    static getLast(arr) {
+        return arr[arr.length - 1]
+    }
+    /**
+     * @constructor
+     * @param {NestedInteger[]} nestedList
+     */
+    constructor(nestedList) {
+        this.stack = [[nestedList, 0]]
+    }
+    /**
+     * @this NestedIterator
+     * @returns {boolean}
+     */
+    hasNext() {
+        this.makeTopInteger()
+        return this.stack.length > 0
+    }
+    /**
+     * @this NestedIterator
+     * @returns {integer}
+     */
+    next() {
+        const lastPair = NestedIterator.getLast(this.stack)
+        const [list, index] = lastPair
+        lastPair[1]++
+        return list[index].getInteger()
+    }
 
-/**
- * @this NestedIterator
- * @returns {integer}
- */
-NestedIterator.prototype.next = function() {
-    return this.stack.pop()
-}
+    makeTopInteger() {
+        while (this.stack.length > 0) {
+            let lastPair = NestedIterator.getLast(this.stack)
+            let [list, index] = lastPair
 
-/**
- * @param {NestedInteger[]} list
- * @param {integer[]} stack
- * @returns {void}
- */
-var flatten = function(list, stack) {
-    for (let i = list.length - 1; i >= 0; i--) {
-        let curr = list[i]
-        if (curr.isInteger()) {
-            stack.push(curr.getInteger())
-        } else {
-            flatten(curr.getList(), stack)
+            if (list.length === index) {
+                this.stack.pop()
+                continue
+            }
+            if (list[index].isInteger()) {
+                return
+            }
+            let subList = list[index].getList()
+            this.stack.push([subList, 0])
+            lastPair[1]++
         }
     }
 }
-
 /**
  * Your NestedIterator will be called like this:
  * var i = new NestedIterator(nestedList), a = [];
  * while (i.hasNext()) a.push(i.next());
  */
 
-// runtime 15%
-// memory 60%
+// runtime 11%
+// memory 20%

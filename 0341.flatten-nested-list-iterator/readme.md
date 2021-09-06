@@ -34,6 +34,8 @@ Explanation: By calling next repeatedly until hasNext returns false, the order o
 
 ## Pseudocode
 
+Recusion
+
 ```
 FLATTEN-NESTED-LIST(nestedList)
   stack = new Stack<int>()
