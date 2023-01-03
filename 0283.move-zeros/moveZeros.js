@@ -3,22 +3,19 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var moveZeroes = function (nums) {
-    if (nums.length === 1) {
-        return nums
-    }
-    let i = 0
-    let j = 1
-    while (j < nums.length) {
-        if (nums[i] === 0) {
-            if (nums[j] === 0) {
-                j++
-            } else {
-                swap(nums, i, j)
-                i++
-                j++
+    let k = 0 // [0, k) are all non-zero elements
+
+    /**
+     * iterate through nums, such that:
+     *  [0, k) are non-zero elements in order, and
+     *  [k, i] are zeros
+     */
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] !== 0) {
+            if (i != k) {
+                swap(nums, i, k)
             }
-        } else {
-            i++, j++
+            k++
         }
     }
 }
@@ -30,5 +27,5 @@ var swap = function (arr, i, j) {
 }
 
 module.exports = moveZeroes
-// runtime: 26%
-// memory: 61%
+// runtime: 75%
+// memory: 78%

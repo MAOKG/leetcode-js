@@ -44,3 +44,24 @@ END
 time: O(n)
 space: O(1)
 ```
+
+```
+MOVE-ZEROS(nums)
+    if nums.length = 1
+        return nums
+    k = 0 // [0, k) are all non-zero elements
+
+    iterate through nums, such that
+        [0, k) are non-zero elements in order
+        [k, i] are zeros
+
+    for i = 0 -> nums.length-1
+        if nums[i] is not zero
+            if i != k
+                swap(nums[k], nums[i])
+            k++
+END
+
+time: O(n)
+space: O(1)
+```
