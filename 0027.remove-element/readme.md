@@ -58,19 +58,16 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 
 ```
 REMOVE-ELEMENT(nums, val)
-    i = 0, j = nums.length - 1
+    i = 0, n = nums.length
 
-    while i <= j
-        if nums[j] is val
-            j--
-        else if nums[i] is val
-            swap nums[i] and nums[j]
-            i++
+    while i < n
+        if nums[i] is val
+            nums[i] = nums[n-1]
+            // reduce array size by 1
+            n--
         else
             i++
-    after the loop, i should be the first element just after the k elements [0, k-1], so k equals to i
-
-    return i
+    return n
 END
 
 time: O(n)

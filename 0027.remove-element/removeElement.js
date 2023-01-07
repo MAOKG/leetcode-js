@@ -5,27 +5,19 @@
  */
 var removeElement = function (nums, val) {
     let i = 0
-    let j = nums.length - 1
-    while (i <= j) {
-        if (nums[j] === val) {
-            j--
-        } else if (nums[i] == val) {
-            swap(nums, i, j)
-            i++
-            j--
+    let n = nums.length
+    while (i < n) {
+        if (nums[i] === val) {
+            nums[i] = nums[n - 1]
+            // reduce array length by 1
+            n--
         } else {
             i++
         }
     }
-    return i
-}
-
-var swap = function (nums, i, j) {
-    let temp = nums[i]
-    nums[i] = nums[j]
-    nums[j] = temp
+    return n
 }
 
 module.exports = removeElement
-// time: 58%
-// space: 98%
+// time: 94%
+// space: 33%
