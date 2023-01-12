@@ -73,7 +73,18 @@ Space: O(m+n)
 
 ```
 MERGE(nums1, m, nums2, n)
-
+    i = m - 1
+    j = n - 1
+    for k -> m+n-1 : 0
+        if i >= 0 and j >=0 and nums2[j] > nums1[i]
+            nums1[k] = nums2[j]
+            j--
+        else if i < 0
+            nums1[k] = nums2[j]
+            j--
+        else
+            nums1[k] = nums1[i]
+            i--
 END
 
 Time: O(m+n)
