@@ -40,10 +40,40 @@ SORT-COLORS(nums)
     for i = 0 -> nums.length-1
         if counts[0] > 0
             nums[i] = 0
+            counts[0]--
         else if counts[1] > 0
             nums[i] = 1
+            counts[1]--
         else
             nums[i] = 2
+END
+
+time: O(n)
+space: O(1)
+```
+
+2. One pass using three way partition
+
+have two pointers `zero` and `two` to partition the array such that
+
+-   elements in [0, zero] equals to 0
+-   elements in (zero, two) equals to 1
+-   elements in [two, n-1] equals to 2
+
+```
+SORT-COLORS(nums)
+    zero = -1, two = nums.length
+    i = 0
+    while i < two
+        if nums[i] = 0
+            zero++
+            swap(nums[i], nums[zero])
+            i++
+        else if nums[i] = 2
+            two--
+            swap(nums[i], nums[two])
+        else
+            i++
 END
 
 time: O(n)
