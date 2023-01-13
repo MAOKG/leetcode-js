@@ -10,10 +10,10 @@ const ListNode = require('../utils/ListNode')
  * @param {ListNode} head
  * @return {ListNode}
  */
-var swapPairs = function(head) {
+var swapPairs = function (head) {
     let dummyHead = new ListNode()
     dummyHead.next = head
-    before = dummyHead
+    let before = dummyHead
     while (before.next && before.next.next) {
         let node1 = before.next
         let node2 = before.next.next

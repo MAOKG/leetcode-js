@@ -10,7 +10,7 @@ const ListNode = require('../utils/ListNode')
  * @param {ListNode} head
  * @return {ListNode}
  */
-var sortList = function(head) {
+var sortList = function (head) {
     if (!head || !head.next) {
         return head
     }
@@ -39,11 +39,11 @@ var sortList = function(head) {
  * @param {ListNode} head2
  * @return {ListNode}
  */
-var mergeTwoLists = function(head1, head2) {
+var mergeTwoLists = function (head1, head2) {
     let curr1 = head1
     let curr2 = head2
     let dummyHead = new ListNode()
-    curr = dummyHead
+    let curr = dummyHead
     while (curr1 || curr2) {
         if (curr1 && curr2) {
             if (curr1.val < curr2.val) {

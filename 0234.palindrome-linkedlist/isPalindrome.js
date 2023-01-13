@@ -9,7 +9,7 @@
  * @param {ListNode} head
  * @return {boolean}
  */
-var isPalindrome = function(head) {
+var isPalindrome = function (head) {
     if (!head || !head.next) {
         return true
     }
@@ -27,8 +27,8 @@ var isPalindrome = function(head) {
     let right = mid.next
     mid.next = null
     right = reverse(right)
-    curr1 = head
-    curr2 = right
+    let curr1 = head
+    let curr2 = right
     while (curr2) {
         if (curr1.val !== curr2.val) {
             return false
@@ -43,7 +43,7 @@ var isPalindrome = function(head) {
  * @param {ListNode} head
  * @param {ListNode}
  */
-var reverse = function(head) {
+var reverse = function (head) {
     let curr = head
     let pre = null
     while (curr) {
