@@ -13,7 +13,7 @@ const linkedListToArray = require('../utils/linkedListToArray')
  * @param {number} n
  * @return {ListNode}
  */
-var reverseBetween = function(head, m, n) {
+var reverseBetween = function (head, m, n) {
     if (m >= n) {
         return head
     }
@@ -26,7 +26,7 @@ var reverseBetween = function(head, m, n) {
         i++
     }
     let before = prev
-    tail = curr
+    let tail = curr
     while (i <= n) {
         let next = curr.next
         curr.next = prev
