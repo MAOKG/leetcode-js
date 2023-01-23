@@ -17,3 +17,5 @@ Practice leetcode using js
 -   [215. Kth Largest Element in an Array](/0215.find-kth-largest/readme.md)
 
 -   [167. Two Sum II - Input array is sorted](./0167.two-sum-2/readme.md)
+
+-   [125. Valid Palindrome](./0125.valid-palindrome/readme.md)
