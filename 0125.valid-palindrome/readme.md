@@ -39,4 +39,6 @@ IS-PALINDROME(s)
     return TRUE
 END
 
+time: O(n)
+space: O(1)
 ```

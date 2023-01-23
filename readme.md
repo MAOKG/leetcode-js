@@ -15,3 +15,13 @@ Practice leetcode using js
 -   [88. Merge Sorted Array](/0088.merge-sorted-array/readme.md)
 
 -   [215. Kth Largest Element in an Array](/0215.find-kth-largest/readme.md)
+
+-   [167. Two Sum II - Input array is sorted](./0167.two-sum-2/readme.md)
+
+-   [125. Valid Palindrome](./0125.valid-palindrome/readme.md)
+
+-   [344. Reverse String](/0344.reverse-string/readme.md)
+
+-   [345. Reverse Vowels of a String](/0345.reverse-vowels/readme.md)
+
+-   [11. Container With Most Water](/0011.max-area/readme.md)
