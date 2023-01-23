@@ -21,3 +21,5 @@ Practice leetcode using js
 -   [125. Valid Palindrome](./0125.valid-palindrome/readme.md)
 
 -   [344. Reverse String](/0344.reverse-string/readme.md)
+
+-   [345. Reverse Vowels of a String](/0345.reverse-vowels/readme.md)
