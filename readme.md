@@ -15,3 +15,5 @@ Practice leetcode using js
 -   [88. Merge Sorted Array](/0088.merge-sorted-array/readme.md)
 
 -   [215. Kth Largest Element in an Array](/0215.find-kth-largest/readme.md)
+
+-   [167. Two Sum II - Input array is sorted](./0167.two-sum-2/readme.md)

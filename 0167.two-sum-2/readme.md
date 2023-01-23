@@ -33,4 +33,6 @@ TWO-SUM(A, target)
     return error("no solution")
 END
 
+time: O(n)
+space: O(1)
 ```

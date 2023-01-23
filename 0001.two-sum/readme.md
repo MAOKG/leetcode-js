@@ -25,4 +25,7 @@ TWO-SUM(A, target)
         i++
     return []
 END
+
+time: O(n)
+space: O(n)
 ```
