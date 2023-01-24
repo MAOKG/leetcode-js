@@ -2,11 +2,29 @@
 
 Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).
 
-## Examples
+Example 1:
 
 ```
-Input: S = "ADOBECODEBANC", T = "ABC"
+Input: s = "ADOBECODEBANC", t = "ABC"
 Output: "BANC"
+Explanation: The minimum window substring "BANC" includes 'A', 'B', and 'C' from string t.
+```
+
+Example 2:
+
+```
+Input: s = "a", t = "a"
+Output: "a"
+Explanation: The entire string s is the minimum window.
+```
+
+Example 3:
+
+```
+Input: s = "a", t = "aa"
+Output: ""
+Explanation: Both 'a's from t must be included in the window.
+Since the largest window of s only has one 'a', return empty string.
 ```
 
 **Note**:
@@ -51,4 +69,7 @@ UPDATE-RESULT(result,s, l, r)
     if result = '' || (r-l+1) < len(result)
         result = s[l:r]
 END
+
+time: O(m+n)
+space: O(m+n)
 ```

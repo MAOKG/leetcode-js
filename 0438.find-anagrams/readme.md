@@ -73,4 +73,7 @@ FIND-ANAGRAMS(s,p)
                 i++
     return result
 END
+
+time: O(n)
+space: O(n)
 ```

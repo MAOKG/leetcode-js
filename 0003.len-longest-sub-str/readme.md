@@ -51,4 +51,7 @@ LENGTH-LONGEST-SUBSTRING(s)
 
     return max
 END
+
+time: O(n)
+space: O(n)
 ```
