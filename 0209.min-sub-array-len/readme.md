@@ -38,4 +38,7 @@ MIN-SUB-ARRAY-LEN(s, A)
     else
         return minLen
 END
+
+time: O(n)
+space: O(1)
 ```
