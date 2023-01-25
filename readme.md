@@ -45,3 +45,5 @@ Practice leetcode using js
 -   [202. Happy Number](/0202.happy-number/readme.md)
 
 -   [290. Word Pattern](/0290.word-pattern/readme.md)
+
+-   [205. Isomorphic Strings](/0205.is-isomorphic/readme.md)
