@@ -2,7 +2,7 @@
  * @param {number} n
  * @return {boolean}
  */
-var isHappy = function(n) {
+var isHappy = function (n) {
     let visited = {}
     while (n !== 1) {
         if (visited[n]) {
@@ -18,7 +18,7 @@ var isHappy = function(n) {
  * @param {number} n
  * @return {number}
  */
-var sumOfSquares = function(n) {
+var sumOfSquares = function (n) {
     let sum = 0
     let currNum = n
     while (currNum > 0) {
@@ -29,5 +29,5 @@ var sumOfSquares = function(n) {
 }
 
 module.exports = isHappy
-// runtime: 68 ms 45%
-// memory: 35 MB 465
+// runtime: 83%
+// memory: 100%

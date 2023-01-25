@@ -41,3 +41,5 @@ Practice leetcode using js
 -   [350. Intersection of Two Arrays II](/0350.intersect/readme.md)
 
 -   [242. Valid Anagram](/0242.is-anagram/readme.md)
+
+-   [202. Happy Number](/0202.happy-number/readme.md)
