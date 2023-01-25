@@ -47,3 +47,5 @@ Practice leetcode using js
 -   [290. Word Pattern](/0290.word-pattern/readme.md)
 
 -   [205. Isomorphic Strings](/0205.is-isomorphic/readme.md)
+
+-   [451. Sort Characters By Frequency](/0451.frequency-sort/readme.md)
