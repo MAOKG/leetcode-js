@@ -3,23 +3,20 @@
  * @param {number[]} nums2
  * @return {number[]}
  */
-var intersection = function(nums1, nums2) {
-    const map1 = {}
-    const resultSet = new Set()
-    for (let ele of nums1) {
-        if (!map1[ele]) {
-            map1[ele] = true
-        }
-    }
-    for (let ele of nums2) {
-        if (map1[ele]) {
-            resultSet.add(ele)
+var intersection = function (nums1, nums2) {
+    const set1 = new Set(nums1)
+    const set2 = new Set(nums2)
+    const res = []
+
+    for (let item of set1) {
+        if (set2.has(item)) {
+            res.push(item)
         }
     }
 
-    return Array.from(resultSet)
+    return res
 }
 
 module.exports = intersection
-// runtime 60ms 57%
-// memory 36 MB 8%
+// runtime 95%
+// memory 52%
