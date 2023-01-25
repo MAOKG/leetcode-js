@@ -39,3 +39,5 @@ Practice leetcode using js
 -   [349. Intersection of Two Arrays](/0349.intersections/readme.md)
 
 -   [350. Intersection of Two Arrays II](/0350.intersect/readme.md)
+
+-   [242. Valid Anagram](/0242.is-anagram/readme.md)
