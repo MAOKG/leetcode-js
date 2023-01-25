@@ -49,3 +49,5 @@ Practice leetcode using js
 -   [205. Isomorphic Strings](/0205.is-isomorphic/readme.md)
 
 -   [451. Sort Characters By Frequency](/0451.frequency-sort/readme.md)
+
+-   [1. Two Sum](/0001.two-sum/readme.md)
