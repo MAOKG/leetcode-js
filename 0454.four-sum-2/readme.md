@@ -37,4 +37,7 @@ FOUR-SUM-COUNT(A,B,C,D)
                 count+=map[0-C[i]-D[j]]
     count++
 END
+
+time: O(n^2)
+space: O(n^2)
 ```
