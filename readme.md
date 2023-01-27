@@ -51,3 +51,5 @@ Practice leetcode using js
 -   [451. Sort Characters By Frequency](/0451.frequency-sort/readme.md)
 
 -   [1. Two Sum](/0001.two-sum/readme.md)
+
+-   [15. 3Sum](/0015.three-sum/readme.md)
