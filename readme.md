@@ -53,3 +53,5 @@ Practice leetcode using js
 -   [1. Two Sum](/0001.two-sum/readme.md)
 
 -   [15. 3Sum](/0015.three-sum/readme.md)
+
+-   [18. 4Sum](/0018.four-sum/readme.md)
