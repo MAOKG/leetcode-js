@@ -61,3 +61,5 @@ Practice leetcode using js
 -   [454. 4Sum II](/0454.four-sum-2/readme.md)
 
 -   [49. Group Anagrams](/0049.group-anagrams/readme.md)
+
+-   [447. Number of Boomerangs](/0447.number-of-boomerangs/readme.md)
