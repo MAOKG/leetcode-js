@@ -67,3 +67,5 @@ Practice leetcode using js
 -   [149. Max Points on a Line](/0149.max-points/readme.md)
 
 -   [219. Contains Duplicate II](/0219.contains-duplicate-2/readme.md)
+
+-   [217. Contains Duplicate](/0217.contains-duplicate/readme.md)
