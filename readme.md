@@ -63,3 +63,5 @@ Practice leetcode using js
 -   [49. Group Anagrams](/0049.group-anagrams/readme.md)
 
 -   [447. Number of Boomerangs](/0447.number-of-boomerangs/readme.md)
+
+-   [149. Max Points on a Line](/0149.max-points/readme.md)
