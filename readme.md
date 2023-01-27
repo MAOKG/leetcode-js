@@ -65,3 +65,5 @@ Practice leetcode using js
 -   [447. Number of Boomerangs](/0447.number-of-boomerangs/readme.md)
 
 -   [149. Max Points on a Line](/0149.max-points/readme.md)
+
+-   [219. Contains Duplicate II](/0219.contains-duplicate-2/readme.md)
