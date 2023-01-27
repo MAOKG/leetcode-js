@@ -59,3 +59,5 @@ Practice leetcode using js
 -   [16. 3Sum Closest](/0016.three-sum-closest/readme.md)
 
 -   [454. 4Sum II](/0454.four-sum-2/readme.md)
+
+-   [49. Group Anagrams](/0049.group-anagrams/readme.md)

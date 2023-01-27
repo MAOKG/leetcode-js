@@ -2,24 +2,21 @@
  * @param {string[]} strs
  * @return {string[][]}
  */
-var groupAnagrams = function(strs) {
-    const result = []
-    const map = {}
+var groupAnagrams = function (strs) {
+    const anaMap = new Map()
 
-    for (let i = 0; i < strs.length; i++) {
-        let str = strs[i]
-            .split('')
-            .sort()
-            .join('')
-        if (map.hasOwnProperty(str)) {
-            result[map[str]].push(strs[i])
+    for (const s of strs) {
+        const key = s.split('').sort().join('')
+        if (anaMap.has(key)) {
+            const arr = anaMap.get(key)
+            arr.push(s)
         } else {
-            map[str] = result.length
-            result.push([strs[i]])
+            anaMap.set(key, [s])
         }
     }
-    return result
+
+    return [...anaMap.values()]
 }
 module.exports = groupAnagrams
-// runtime 70%
-// memory 31%
+// runtime 94%
+// memory 97%

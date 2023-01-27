@@ -36,4 +36,7 @@ GROUP-ANAGRAMS(A)
             result.push([A[i]])
     return result
 END
+
+time: O(n)
+space: O(n)
 ```
