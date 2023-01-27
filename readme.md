@@ -55,3 +55,5 @@ Practice leetcode using js
 -   [15. 3Sum](/0015.three-sum/readme.md)
 
 -   [18. 4Sum](/0018.four-sum/readme.md)
+
+-   [16. 3Sum Closest](/0016.three-sum-closest/readme.md)
