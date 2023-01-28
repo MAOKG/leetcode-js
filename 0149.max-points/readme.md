@@ -79,6 +79,9 @@ FIND-GCD(a, b)
         return b
     return FIND-GCD(b%a, a)
 END
+
+time: O(n^2)
+space: O(n)
 ```
 
 ## Reference

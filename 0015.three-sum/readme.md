@@ -36,6 +36,8 @@ THREE-SUM(A)
                     l++
                 while A[r]=A[r-1] && l<r
                     r--
+                l++
+                r--
             else if curr+A[l]+A[r]>0
                 r--
             else
@@ -44,4 +46,7 @@ THREE-SUM(A)
             i++
     return result
 END
+
+time: O(n^2)
+space: O(n)
 ```

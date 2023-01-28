@@ -38,4 +38,7 @@ CONTAINS-DUPLICATE(A, k)
             set.remove(A[i-k])
     return false
 END
+
+time: O(n)
+space: O(k)
 ```

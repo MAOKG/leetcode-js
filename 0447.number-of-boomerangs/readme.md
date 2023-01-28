@@ -32,4 +32,7 @@ NUMBER-OF-BOOMERANGS(A)
                 result += map[key] * (map[key]-1)
     return result
 END
+
+time: O(n^2)
+space: O(n)
 ```

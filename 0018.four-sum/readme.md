@@ -53,4 +53,7 @@ FOUR-SUM(A, target)
             i++
     return result
 END
+
+time: O(n^3)
+space: O(n)
 ```

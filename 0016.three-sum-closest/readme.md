@@ -33,4 +33,7 @@ THREE-SUM-CLOSEST(A, target)
                 l++
     return minDiff+target
 END
+
+time: O(n^2)
+space: O(1)
 ```

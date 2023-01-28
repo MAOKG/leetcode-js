@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-var containsDuplicate = function(nums) {
+var containsDuplicate = function (nums) {
     const set = new Set()
     for (let i = 0; i < nums.length; i++) {
         if (set.has(nums[i])) {
@@ -14,5 +14,5 @@ var containsDuplicate = function(nums) {
 }
 
 module.exports = containsDuplicate
-// runtime 70%
-// memory 74%
+// runtime 99%
+// memory 99%

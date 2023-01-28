@@ -33,3 +33,41 @@ Practice leetcode using js
 -   [438. Find All Anagrams in a String](/0438.find-anagrams/readme.md)
 
 -   [76. Minimum Window Substring](/0076.min-window/readme.md)
+
+## Set and Map
+
+-   [349. Intersection of Two Arrays](/0349.intersections/readme.md)
+
+-   [350. Intersection of Two Arrays II](/0350.intersect/readme.md)
+
+-   [242. Valid Anagram](/0242.is-anagram/readme.md)
+
+-   [202. Happy Number](/0202.happy-number/readme.md)
+
+-   [290. Word Pattern](/0290.word-pattern/readme.md)
+
+-   [205. Isomorphic Strings](/0205.is-isomorphic/readme.md)
+
+-   [451. Sort Characters By Frequency](/0451.frequency-sort/readme.md)
+
+-   [1. Two Sum](/0001.two-sum/readme.md)
+
+-   [15. 3Sum](/0015.three-sum/readme.md)
+
+-   [18. 4Sum](/0018.four-sum/readme.md)
+
+-   [16. 3Sum Closest](/0016.three-sum-closest/readme.md)
+
+-   [454. 4Sum II](/0454.four-sum-2/readme.md)
+
+-   [49. Group Anagrams](/0049.group-anagrams/readme.md)
+
+-   [447. Number of Boomerangs](/0447.number-of-boomerangs/readme.md)
+
+-   [149. Max Points on a Line](/0149.max-points/readme.md)
+
+-   [219. Contains Duplicate II](/0219.contains-duplicate-2/readme.md)
+
+-   [217. Contains Duplicate](/0217.contains-duplicate/readme.md)
+
+-   [220. Contains Duplicate III](/0220.contains-duplicates-3/readme.md)
