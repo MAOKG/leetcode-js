@@ -69,3 +69,5 @@ Practice leetcode using js
 -   [219. Contains Duplicate II](/0219.contains-duplicate-2/readme.md)
 
 -   [217. Contains Duplicate](/0217.contains-duplicate/readme.md)
+
+-   [220. Contains Duplicate III](/0220.contains-duplicates-3/readme.md)
