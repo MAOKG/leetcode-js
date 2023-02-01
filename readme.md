@@ -71,3 +71,7 @@ Practice leetcode using js
 -   [217. Contains Duplicate](/0217.contains-duplicate/readme.md)
 
 -   [220. Contains Duplicate III](/0220.contains-duplicates-3/readme.md)
+
+## Linkedlist
+
+-   [206. Reverse Linked List](/0206.reverse-linkedlist/readme.md)
