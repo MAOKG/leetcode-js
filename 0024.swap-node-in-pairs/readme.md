@@ -27,4 +27,7 @@ SWAP-PAIRS(head)
         before = node1
     return dummyHead.next
 END
+
+time: O(n)
+space: O(1)
 ```
