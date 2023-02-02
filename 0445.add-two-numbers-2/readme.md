@@ -47,4 +47,7 @@ ADD-TWO-NUMBERS(head1, head2)
         prev = curr
     return curr
 END
+
+time: O(n)
+space: O(n)
 ```
