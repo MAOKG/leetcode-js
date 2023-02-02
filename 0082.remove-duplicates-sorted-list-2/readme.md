@@ -45,4 +45,7 @@ DELETE-DUPLICATES(head)
             break
     return dummyHead.next
 END
+
+time: O(n)
+space: O(1)
 ```
