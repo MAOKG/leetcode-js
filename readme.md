@@ -83,3 +83,4 @@ Practice leetcode using js
 -   [445. Add Two Numbers II](/0445.add-two-numbers-2/readme.md)
 -   [203. Remove Linked List Elements](/0203.remove-linkedlist-elements/readme.md)
 -   [82. Remove Duplicates from Sorted List II](/0082.remove-duplicates-sorted-list-2/readme.md)
+-   [21. Merge Two Sorted Lists](/0021.merge-two-lists/readme.md)

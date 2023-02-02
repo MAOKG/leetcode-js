@@ -35,4 +35,7 @@ MERGE-TWO-LISTS(head1, head2)
 
     return dummyHead.next
 END
+
+time: O(n)
+space: O(1)
 ```
