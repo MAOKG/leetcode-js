@@ -75,3 +75,4 @@ Practice leetcode using js
 ## Linkedlist
 
 -   [206. Reverse Linked List](/0206.reverse-linkedlist/readme.md)
+-   [92. Reverse Linked List II](/0092.reverse-linkedlist-2/readme.md)
