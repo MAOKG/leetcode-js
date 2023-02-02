@@ -55,4 +55,7 @@ ODD-EVENT-LIST(head)
     oddTail.next = evenHead
     return head
 END
+
+time: O(n)
+space: O(1)
 ```

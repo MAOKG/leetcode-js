@@ -9,7 +9,7 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var oddEvenList = function(head) {
+var oddEvenList = function (head) {
     if (!head) {
         return null
     }
@@ -42,5 +42,5 @@ var oddEvenList = function(head) {
     return head
 }
 module.exports = oddEvenList
-// runtime 10%
+// runtime 60%
 // memory 100%
