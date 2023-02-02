@@ -38,4 +38,7 @@ ADD-TWO-NUMBERS(head1, head2)
         curr = curr.next
     return dummyHead.next
 END
+
+time: O(n)
+space: O(n)
 ```

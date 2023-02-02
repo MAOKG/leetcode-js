@@ -79,3 +79,4 @@ Practice leetcode using js
 -   [83. Remove Duplicates from Sorted List](/0083.remove-duplicates-sorted-list/readme.md)
 -   [86. Partition List](/0086.partition-list/readme.md)
 -   [328. Odd Even Linked List](/0328.odd-even-linkedlist/readme.md)
+-   [2. Add Two Numbers](/0002.add-two-numbers/readme.md)
