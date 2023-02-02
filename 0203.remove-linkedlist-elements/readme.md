@@ -23,4 +23,7 @@ REMOVE-ELEMENTS(head, val)
             curr = curr.next
     return dummyHead.next
 END
+
+time: O(n)
+space: O(1)
 ```

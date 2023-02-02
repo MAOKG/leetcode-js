@@ -81,3 +81,4 @@ Practice leetcode using js
 -   [328. Odd Even Linked List](/0328.odd-even-linkedlist/readme.md)
 -   [2. Add Two Numbers](/0002.add-two-numbers/readme.md)
 -   [445. Add Two Numbers II](/0445.add-two-numbers-2/readme.md)
+-   [203. Remove Linked List Elements](/0203.remove-linkedlist-elements/readme.md)
