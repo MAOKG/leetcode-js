@@ -42,4 +42,7 @@ PARTITION(head, x)
     else
         return rightHead
 END
+
+time: O(n)
+space: O(1)
 ```
