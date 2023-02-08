@@ -85,3 +85,4 @@ Practice leetcode using js
 -   [82. Remove Duplicates from Sorted List II](/0082.remove-duplicates-sorted-list-2/readme.md)
 -   [21. Merge Two Sorted Lists](/0021.merge-two-lists/readme.md)
 -   [24. Swap Nodes in Pairs](/0024.swap-node-in-pairs/readme.md)
+-   [25. Reverse Nodes in k-Group](/0025.reverse-nodes-in-kgroup/readme.md)
