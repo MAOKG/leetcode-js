@@ -37,4 +37,7 @@ REMOVE-NTH-FROM-END(head, n)
 
     return dummyHead.next
 END
+
+time: O(n)
+space: O(1)
 ```
