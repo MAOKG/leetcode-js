@@ -88,3 +88,4 @@ Practice leetcode using js
 -   [25. Reverse Nodes in k-Group](/0025.reverse-nodes-in-kgroup/readme.md)
 -   [147. Insertion Sort List](/0147.insertion-sort-list/readme.md)
 -   [148. Sort List](/0148.sort-list/readme.md)
+-   [237. Delete Node in a Linked List](/0237.delete-node-linkedlist/readme.md)
