@@ -15,7 +15,7 @@ var insertionSortList = function (head) {
     let dummyHead = new ListNode()
 
     while (curr) {
-        next = curr.next
+        let next = curr.next
         insert(curr, dummyHead)
         curr = next
     }
