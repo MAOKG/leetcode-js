@@ -26,25 +26,32 @@ Output: -1->0->3->4->5
 
 ```
 INSERTION-SORT-LIST(head)
-    if head is null
-        return null
-    dummyHead = new ListNode(-INFINITE)
-    dummyHead.next = head
-    tail = head
-    while tail.next
-        ele = tail.next
-        curr = dummyHead
-        while curr && curr.next
-            if curr = tail
-                tail = ele
-                break
-            if  curr.val<ele.val <= curr.next
-                tail.next = ele.next
-                next = curr.next
-                curr.next = ele
-                ele.next = next
-                break
-            curr = curr.next
+    curr = head
+    dummyHead = new ListNode()
+
+    while curr is not null
+        next = curr.next
+        INSERT(curr, dummyHead)
+        curr = next
+
     return dummyHead.next
 END
+
+INSERT(node, dummyHead)
+    curr = dummyHead.next
+    prev = dummyHead
+
+    while curr is not null
+        if curr.val > node.vak
+            break
+        next = curr.next
+        prev = curr
+        curr = next
+
+    prev.next = node
+    node.next = curr
+END
+
+time: O(n^2)
+space: O(1)
 ```

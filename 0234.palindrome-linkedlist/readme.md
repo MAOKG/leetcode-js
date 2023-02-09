@@ -59,4 +59,7 @@ REVERSE(head)
         curr = next
     return pre
 END
+
+time: O(n)
+space: O(1)
 ```

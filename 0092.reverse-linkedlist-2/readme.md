@@ -41,4 +41,7 @@ REVERSE-BETWEEM(head, m, n)
         before.next = prev
         return head
 END
+
+time: O(n)
+space: O(1)
 ```

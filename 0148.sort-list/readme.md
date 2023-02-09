@@ -65,4 +65,7 @@ MERGE-TWO-LISTS(head1, head2)
         curr = curr.next
     return dummyHead.next
 END
+
+time: O(nlogn)
+space: O(logn) due to recursive call stack
 ```

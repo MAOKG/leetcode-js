@@ -1,42 +1,45 @@
 const ListNode = require('../utils/ListNode')
 /**
  * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
  * }
  */
 /**
  * @param {ListNode} head
  * @return {ListNode}
  */
-var insertionSortList = function(head) {
-    if (!head) {
-        return null
+var insertionSortList = function (head) {
+    let curr = head
+    let dummyHead = new ListNode()
+
+    while (curr) {
+        let next = curr.next
+        insert(curr, dummyHead)
+        curr = next
     }
-    let dummyHead = new ListNode(Number.NEGATIVE_INFINITY)
-    dummyHead.next = head
-    let tail = head
-    while (tail.next) {
-        let ele = tail.next
-        let curr = dummyHead
-        while (curr && curr.next) {
-            if (curr === tail) {
-                tail = ele
-                break
-            }
-            if (curr.val < ele.val && ele.val <= curr.next.val) {
-                tail.next = ele.next
-                let next = curr.next
-                curr.next = ele
-                ele.next = next
-                break
-            }
-            curr = curr.next
-        }
-    }
+
     return dummyHead.next
 }
+
+var insert = function (node, dummyHead) {
+    let curr = dummyHead.next
+    let prev = dummyHead
+    while (curr) {
+        if (curr.val > node.val) {
+            break
+        }
+        let next = curr.next
+        prev = curr
+        curr = next
+    }
+
+    prev.next = node
+    node.next = curr
+
+    return dummyHead
+}
 module.exports = insertionSortList
-// runtime 33%
-// memory 100%
+// runtime 73%
+// memory 82%

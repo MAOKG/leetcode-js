@@ -60,4 +60,7 @@ MERGE(head1, head2)
         curr1.next.next = next
         curr1 = next
 END
+
+time: O(n)
+space: O(1)
 ```

@@ -9,7 +9,7 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var reverseList = function(head) {
+var reverseList = function (head) {
     let curr = head
     let prev = null
     while (curr) {
@@ -22,5 +22,5 @@ var reverseList = function(head) {
 }
 
 module.exports = reverseList
-// runtime 15%
-// memory 74%
+// runtime 80%
+// memory 98%

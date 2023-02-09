@@ -41,4 +41,7 @@ DELETE-NODE(node)
             node.next = node.next.next
     }
 END
+
+time: O(1)
+space: O(1)
 ```

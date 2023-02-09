@@ -60,4 +60,39 @@ REVERSE(before, tail)
         curr = next
     return end
 END
+
+time: O(n)
+space: O(1)
+```
+
+Using recursion
+
+```
+REVERSE-K-GROUP(head, k)
+    a = head
+    b = head
+    for i = [0, k)
+        if b is null
+            return head
+        b = b.next
+    newHead = reverse(a, b)
+    a.next = REVERSE-K-GROUP(b, k)
+    return newHead
+END
+
+// reverse nodes [a, b)
+REVERSE(a, b)
+    pre = null
+    curr = a
+
+    while curr is not b
+        next = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next
+    return prev
+END
+
+time: O(n)
+space: O(n) due to call stack
 ```

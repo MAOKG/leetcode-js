@@ -35,4 +35,7 @@ DELETE-DUPLICATES(head)
             curr = curr.next
     return head
 END
+
+time: O(n)
+space: O(1)
 ```

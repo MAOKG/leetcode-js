@@ -22,4 +22,7 @@ REVERSE-LIST(head)
         curr = next
     return prev
 END
+
+time: O(n)
+space: O(1)
 ```
