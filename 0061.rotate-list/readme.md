@@ -46,4 +46,7 @@ ROTATE-RIGHT(head, k)
     tail.next = null
     return newHead
 END
+
+time: O(n)
+space: O(1)
 ```
